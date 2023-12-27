@@ -25,7 +25,7 @@ const clearHistory = (content) => {
 const writeHistory = (content) => {
   fs.readFile('history.json','utf8',(error,data) => {
     let dataJson = JSON.parse(data);
-    if (dataJson.length > 300) {
+    if (dataJson.length > 600) {
       clearHistory(content);
       broadcastMessage(JSON.stringify({ 'code': 500 }));
     } else {

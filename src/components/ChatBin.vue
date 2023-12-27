@@ -62,6 +62,10 @@
                 <el-tooltip class="box-item" effect="dark" :content="`连接状态：${onlineChatStore.connection ? '在线' : '离线'}`" placement="right">
                     <span class="systemStat" :style="{ backgroundColor: onlineChatStore.connection ? '#67C23A' : '#F56C6C' }"></span>
                 </el-tooltip>
+                <el-skeleton style="width:300px; height: 28px; border: 5px solid #ffffff; border-radius: 0.25rem;" :rows="0" animated v-if="channelList.find(item => item.id === onlineChatStore.chatChannel).playlist !== 0 && !onlineChatStore.connection" />
+                <el-tooltip class="box-item" effect="dark" content="全站网易云音乐" placement="right" v-if="channelList.find(item => item.id === onlineChatStore.chatChannel).playlist !== 0 && onlineChatStore.connection">
+                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=52 :src="`https://music.163.com/outchain/player?type=0&id=${channelList.find(item => item.id === onlineChatStore.chatChannel).playlist}&auto=1&height=32`"></iframe>
+                </el-tooltip>
                 <span class="onlineText">在线人数：{{ onlineChatStore.onlineUser }}</span>
             </el-header>
 

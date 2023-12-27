@@ -5,12 +5,12 @@
     import { PieChart, Setting, ChatLineRound, Notification } from '@element-plus/icons-vue'
 
     const settingIndex = ref(1);
-    const useHistoryNu = ref(Math.floor(History.length/3));
+    const useHistoryNu = ref(Math.floor(History.length / 6));
     const handleSelect = (key,keyPath) => {
         settingIndex.value = Number(key);
         switch(Number(key)) {
             case 1:
-                useHistoryNu.value = Math.floor(History.length/3);
+                useHistoryNu.value = Math.floor(History.length / 6);
                 break;
             default:
                 useHistoryNu.value = 0;
@@ -71,8 +71,8 @@
 
                         <div class="progress-content">
                             <span class="content-text">当前已经使用：{{ History.length }}条</span>
-                            <span class="content-text">剩余记录配额：{{ 300 - History.length }}条</span>
-                            <span class="content-text">聊天记录限额：300条</span>
+                            <span class="content-text">剩余记录配额：{{ 600 - History.length }}条</span>
+                            <span class="content-text">聊天记录限额：600条</span>
                             <span class="content-text">TIPS：当配额已满时，系统会提前告知用户并自动清理聊天记录</span>
                         </div>
                     </div>
