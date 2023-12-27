@@ -18,7 +18,7 @@ cd ../
 npm run server
 ```
 
-> 注意：后端需要使用Node.js运行，并且需要安装`ws`和`express`两个Node.js包。
+> 注意：后端需要使用Node.js运行，并且需要安装 `ws` 和 `express` 这两个Node.js包。
 
 ## 打包项目
 
