@@ -1,8 +1,7 @@
 <script setup>
     import "./csses/Settings.css"
-    import { ref, watch } from "vue"
+    import { ref } from "vue"
     import History from "../../history.json"
-    import { useOnlineChatStore } from "@/stores/onlineChatStore"
     import { PieChart, Setting, ChatLineRound, Notification } from '@element-plus/icons-vue'
 
     const settingIndex = ref(1);
