@@ -3,11 +3,11 @@
 
     import Cookies from "js-cookie"
     import { ref, watch } from "vue"
-    import Settings from "./Settings.vue"
     import channelList from "../../server/chan.js"
+    import Settings from "@/components/Settings.vue"
     import { ElMessage, ElMessageBox } from 'element-plus'
-    import { useOnlineChatStore } from "../stores/onlineChatStore"
-    import { useOnelDialogStore } from "../stores/onelDialogStore"
+    import { useOnlineChatStore } from "@/stores/onlineChatStore"
+    import { useOnelDialogStore } from "@/stores/onelDialogStore"
 
     const avatarInput = ref('');
     const searchInput = ref('');

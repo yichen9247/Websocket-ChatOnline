@@ -2,10 +2,10 @@
     import "./csses/ChatBin.css"
 
     import { ref } from 'vue'
-    import Message from "./Message.vue"
     import { ElMessage } from 'element-plus'
+    import Message from "@/components/Message.vue"
     import channelList from "../../server/chan.js"
-    import { useOnlineChatStore } from "../stores/onlineChatStore"
+    import { useOnlineChatStore } from "@/stores/onlineChatStore"
 
     const loadingSvg = `
         <path class="path" d="

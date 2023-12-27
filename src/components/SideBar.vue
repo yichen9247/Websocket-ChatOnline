@@ -3,8 +3,8 @@
     import Cookies from "js-cookie"
     import { ref, watch } from "vue"
     import { ElMessage, ElMessageBox } from 'element-plus'
-    import { useOnlineChatStore } from "../stores/onlineChatStore"
-    import { useOnelDialogStore } from "../stores/onelDialogStore"
+    import { useOnlineChatStore } from "@/stores/onlineChatStore"
+    import { useOnelDialogStore } from "@/stores/onelDialogStore"
 
     const onlineChatStore = useOnlineChatStore();
     const onelDialogStore = useOnelDialogStore();

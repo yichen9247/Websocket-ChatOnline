@@ -2,11 +2,11 @@
   import "./App.css"
   import Cookies from "js-cookie"
   import { reactive, watch } from "vue"
-  import SideBar from "./components/SideBar.vue"
-  import ChatBin from "./components/ChatBin.vue"
-  import ELDialog from "./components/ELDialog.vue"
+  import SideBar from "@/components/SideBar.vue"
+  import ChatBin from "@/components/ChatBin.vue"
+  import ELDialog from "@/components/ELDialog.vue"
   import { ElMessage, ElMessageBox  } from 'element-plus'
-  import { useOnlineChatStore } from "./stores/onlineChatStore"
+  import { useOnlineChatStore } from "@/stores/onlineChatStore"
 
   let socket = null;
   const messageList = reactive([]);
