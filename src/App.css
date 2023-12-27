@@ -1,0 +1,13 @@
+main#pagemain {
+  width: 95%;
+  margin: auto;
+  height: 820px;
+  border: 0.5rem solid #ffffff;
+  background-color: rgba(218, 232, 241, 0.85);
+  box-shadow: 0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08);
+}
+main#pagemain {
+  display: flex;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}

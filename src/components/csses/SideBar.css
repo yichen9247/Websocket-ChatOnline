@@ -1,0 +1,30 @@
+div#chat-sidebar {
+  width: 105px;
+  height: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  border-right: 8px solid #ffffff;
+  background-color: #dae8f1;
+}
+div#chat-sidebar div.button-sheet {
+  bottom: 20px;
+  display: flex;
+  margin-top: 20px;
+  position: absolute;
+  justify-content: center;
+}
+div#chat-sidebar div.button-sheet button.el-button {
+  width: 70px;
+  height: 70px;
+  border: none;
+  background: none;
+}
+div#chat-sidebar span.avatar-info {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  margin-top: 19.5px;
+  border: 5px solid #ffffff;
+}
