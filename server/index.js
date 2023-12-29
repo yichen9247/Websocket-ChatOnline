@@ -12,25 +12,25 @@ const server = http.createServer((req, res) => {
 const wss = new WebSocket.Server({ server });
 
 const clearHistory = (content) => {
-  fs.writeFile('history.json',JSON.stringify(["{\"code\":0,\"name\":\"system\",\"message\":\"null\",\"userid\":\"0\",\"userqq\":0,\"channel\":\"0\",\"time\":\"2023-12-24 13:27\"}"]),(error) => {
+  fs.writeFile('cache/history.json',JSON.stringify(["{\"code\":0,\"name\":\"system\",\"message\":\"null\",\"userid\":\"0\",\"userqq\":0,\"channel\":\"0\",\"time\":\"2023-12-24 13:27\"}"]),(error) => {
     writeRunningLog("History clear complete!\n");
-    fs.readFile('history.json','utf8',(error,data) => {
+    fs.readFile('cache/history.json','utf8',(error,data) => {
       let dataJson = JSON.parse(data);
       dataJson.push(content);
-      fs.writeFile('history.json',JSON.stringify(dataJson),(err) => broadcastMessage(content));
+      fs.writeFile('cache/history.json',JSON.stringify(dataJson),(err) => broadcastMessage(content));
     });
   });
 };
 
 const writeHistory = (content) => {
-  fs.readFile('history.json','utf8',(error,data) => {
+  fs.readFile('cache/history.json','utf8',(error,data) => {
     let dataJson = JSON.parse(data);
     if (dataJson.length > 600) {
       clearHistory(content);
       broadcastMessage(JSON.stringify({ 'code': 500 }));
     } else {
       dataJson.push(content);
-      fs.writeFile('history.json',JSON.stringify(dataJson),(err) => broadcastMessage(content));
+      fs.writeFile('cache/history.json',JSON.stringify(dataJson),(err) => broadcastMessage(content));
     }
   });
 }
@@ -68,7 +68,7 @@ wss.on('connection',ws => {
     })
   });
 
-  fs.readFile('history.json','utf8',(error,data) => {
+  fs.readFile('cache/history.json','utf8',(error,data) => {
     let dataJson = JSON.parse(data);
     ws.send(JSON.stringify({ code: 100, data: dataJson }));
   });
