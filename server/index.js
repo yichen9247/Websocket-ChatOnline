@@ -37,7 +37,7 @@ const writeHistory = (content) => {
 
 const writeRunningLog = (content) => {
   console.log(content);
-  fs.appendFile('running.log',content,(error) =>{});
+  fs.appendFile('cache/running.log',content,(error) =>{});
 }
 const broadcastMessage = (message) => wss.clients.forEach(client => client.readyState === WebSocket.OPEN && client.send(message));
 
