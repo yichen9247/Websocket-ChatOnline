@@ -1,7 +1,7 @@
 <script setup>
     import "./csses/Settings.css"
     import { ref } from "vue"
-    import History from "../../history.json"
+    import History from "../../cache/history.json"
     import { PieChart, Setting, ChatLineRound, Notification } from '@element-plus/icons-vue'
 
     const settingIndex = ref(1);

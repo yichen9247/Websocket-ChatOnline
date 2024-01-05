@@ -4,12 +4,12 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "yichen9247",
     "license": "ISC",
     "dependencies": {
-      "ws": "^8.15.1"
+        "mysql": "^2.18.1",
+        "ws": "^8.15.1"
     }
-  }
-  
+}

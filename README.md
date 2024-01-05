@@ -1,6 +1,22 @@
 # Websocket在线聊天室
 
-这是一个基于Vue3和Websocket实时通讯技术以及Element Plus构建的前端网页在线聊天室，旨在使用最少的代码和最简单的逻辑来模拟在线聊天环境。
+这是一个基于Vue3、MySQL和Websocket实时通讯技术以及Element Plus组件库构建的前端网页在线聊天室，旨在使用最少的代码和最简单的逻辑来模拟在线聊天环境。
+
+## 配置项目
+
+请先配置好MySQL数据库，并创建一个的数据库，然后修改server/data.js文件中的数据库连接信息。
+
+```js
+module.exports = {
+    port: 3306,
+    user: 'root',
+    host: 'localhost',
+    database: 'websocket',
+    password: '1234567890'
+}
+```
+
+如果你不想使用MySQL数据库，也可以将server/data.js文件中的数据库配置改掉，让数据库连接失败，这样就会自动变更为本地JSON存储。
 
 ## 运行项目
 
@@ -24,11 +40,16 @@ npm run server
 npm run build
 ```
 
+注意：打包后的项目需要配合后端一起使用，不然会运行失败，建议直接使用开发模式运行，免去打包操作。
+
 ## 清理记录
 
 ```sh
 npm run clear
 ```
+
+此命令用于清理聊天记录，您的用户信息不会被清理掉，不管是MySQL还是JSON存储，只会清理掉聊天记录。
+
 ## 开源说明
 
 本项目作者：Hua（王健铮）
