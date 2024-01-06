@@ -102,7 +102,16 @@ const writeRunningLog = (content) => {
   console.log(content);
   fs.appendFile('cache/running.log',content,(error) =>{});
 }
-const databaseClearWithLocation = () => synconce <= 20 ? synconce++ : syncLocalHistory.databaseSYncWithLocation();
+
+const databaseClearWithLocation = () => {
+  if (synconce <= 20) {
+    synconce++;
+  } else {
+    synconce = 0;
+    syncLocalHistory.databaseSYncWithLocation();
+  }
+}
+
 const broadcastMessage = (message) => wss.clients.forEach(client => client.readyState === WebSocket.OPEN && client.send(message));
 
 wss.on('connection',ws => {
