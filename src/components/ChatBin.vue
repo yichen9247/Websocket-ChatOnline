@@ -8,14 +8,14 @@
     import { useOnlineChatStore } from "@/stores/onlineChatStore"
 
     const loadingSvg = `
-        <path class="path" d="
-          M 30 15
-          L 28 17
-          M 25.61 25.61
-          A 15 15, 0, 0, 1, 15 30
-          A 15 15, 0, 1, 1, 27.99 7.5
-          L 15 15
-        " style="stroke-width: 4px; fill: rgba(0, 0, 0, 0)"/>
+        <path class="path" d="  
+          M 30 15  
+          L 28 17  
+          M 25.61 25.61  
+          A 15 15, 0, 0, 1, 15 30  
+          A 15 15, 0, 1, 1, 27.99 7.5  
+          L 15 15  
+        " style="stroke-width: 4px; stroke: rgba(32, 165, 58, 1); fill: rgba(0, 0, 0, 0)"/>
     `;
 
     const chatText = ref("");
@@ -60,7 +60,7 @@
             <el-header class="content-header">
                 <span class="headerText" v-text="channelList.some(item => item.id === onlineChatStore.chatChannel) ? channelList.find(item => item.id === onlineChatStore.chatChannel).name : channelList.find(item => item.id === 0).name"></span>
                 <el-tooltip class="box-item" effect="dark" :content="`连接状态：${onlineChatStore.connection ? '在线' : '离线'}`" placement="right">
-                    <span class="systemStat" :style="{ backgroundColor: onlineChatStore.connection ? '#67C23A' : '#F56C6C' }"></span>
+                    <span class="systemStat" :style="{ backgroundColor: onlineChatStore.connection ? 'var(--dominColor)' : '#F56C6C' }"></span>
                 </el-tooltip>
                 <el-skeleton style="width:300px; height: 28px; border: 5px solid #ffffff; border-radius: 0.25rem;" :rows="0" animated v-if="channelList.find(item => item.id === onlineChatStore.chatChannel).playlist !== 0 && !onlineChatStore.connection" />
                 <el-tooltip class="box-item" effect="dark" content="全站网易云音乐" placement="right" v-if="channelList.find(item => item.id === onlineChatStore.chatChannel).playlist !== 0 && onlineChatStore.connection">

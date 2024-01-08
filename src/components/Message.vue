@@ -1,7 +1,6 @@
 <script setup>
     
     import "./csses/ChatBin.css"
-    import { ElMessage } from 'element-plus'
     import { useOnlineChatStore } from "../stores/onlineChatStore"
 
     const onlineChatStore = useOnlineChatStore();

@@ -31,12 +31,12 @@ connection.connect((error) => {
 
 const registerUser = (userid, username, userqq) => {
   !connectionFaild && connection.query('SHOW TABLES LIKE "users"', (error, result) => {
-    if (error) throw err;
+    if (error) throw error;
     connection.query('SELECT * FROM users WHERE username = ?', [username], (error, results, fields) => {  
-      if (error) throw error;  
+      if (error) throw error;
       const query = 'INSERT INTO users (userid, username, userqq) VALUES (?, ?, ?)';  
         connection.query(query, [userid, username, userqq], (error, result) => {  
-          if (error) throw err;
+          if (error) throw error;
       });
     });
   });
@@ -63,7 +63,7 @@ const clearHistory = (content) => {
     fs.readFile('cache/history.json','utf8',(error,data) => {
       let dataJson = JSON.parse(data);
       dataJson.push(content);
-      fs.writeFile('cache/history.json',JSON.stringify(dataJson),(err) => broadcastMessage(content));
+      fs.writeFile('cache/history.json',JSON.stringify(dataJson),(error) => broadcastMessage(content));
     });
   });
 };
@@ -76,7 +76,7 @@ const writeHistory = (content) => {
       broadcastMessage(JSON.stringify({ 'code': 500 }));
     } else {
       dataJson.push(content);
-      fs.writeFile('cache/history.json',JSON.stringify(dataJson),(err) => broadcastMessage(content));
+      fs.writeFile('cache/history.json',JSON.stringify(dataJson),(error) => broadcastMessage(content));
     }
   });
 
@@ -120,7 +120,7 @@ wss.on('connection',ws => {
       const messageObject = JSON.parse(message.toString());
       const getMessageTime = date.Year + "-" + date.Month + "-" + date.Date + " " + date.Hou + ":" + date.Min;
       if (messageObject.code === 101) {
-        registerUser(messageObject.userid,messageObject.name,messageObject.userqq);
+        // registerUser(messageObject.userid,messageObject.name,messageObject.userqq);
         writeHistory(JSON.stringify({ 'code': 101, name: '系统', message: messageObject.name + '加入到了聊天室', userid: messageObject.userid, channel: messageObject.channel, userqq: messageObject.userqq, time: getMessageTime }));
         writeRunningLog("[JOIN]" + JSON.stringify({ 'code': 101, name: '系统', message: messageObject.name + '加入到了聊天室', userid: messageObject.userid, channel: messageObject.channel, userqq: messageObject.userqq, time: getMessageTime }) + "\n");
       }

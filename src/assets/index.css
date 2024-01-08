@@ -23,6 +23,27 @@ html {
 ::-webkit-scrollbar {
   display: none;
 }
+:root {
+  --dominColor: #90d29d!important;
+  --seconColor: #f1f9f3!important;
+  --el-color-primary: rgba(32, 165, 58)!important;
+}
+.el-button {
+  --el-button-outline-color: var(--dominColor)!important;
+  --el-button-hover-bg-color: var(--seconColor)!important;
+  --el-button-hover-border-color: var(--dominColor)!important;
+}
+.el-button--primary {
+  border: none!important;
+  transition: background 0.5s !important;
+}
+.el-button--primary {
+  --el-button-bg-color: var(--dominColor)!important;
+  --el-button-border-color: var(--dominColor)!important;
+  --el-button-outline-color: var(--dominColor)!important;
+  --el-button-hover-bg-color: var(--dominColor)!important;
+  --el-button-active-bg-color: var(--dominColor)!important;
+}
 body {
   width: 100%;
   height: 100%;
@@ -45,7 +66,7 @@ svg.icon > path {
 }
 svg.icon > path[data="true"] {
   fill: none;
-  stroke: #409EFF;
+  stroke: rgba(32, 165, 58);
   stroke-dasharray: 0, 1370;
   animation: lineMove 2s ease-in forwards;
 }
@@ -56,7 +77,7 @@ svg.vcon {
   stroke-linejoin: round;
 }
 svg.vcon[data="true"] {
-  stroke: #409EFF;
+  stroke: rgba(32, 165, 58);
   stroke-dasharray: 0, 1370;
   animation: lineMove 2s ease-in forwards;
 }

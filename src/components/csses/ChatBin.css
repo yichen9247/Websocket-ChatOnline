@@ -27,11 +27,11 @@ div#chat-content header.content-header span.onlineText {
   position: absolute;
 }
 div#chat-content header.content-header span.onlineText {
-  color: #409EFF;
   font-size: 36px;
   font-weight: 700;
   line-height: 86px;
   white-space: nowrap;
+  color: var(--dominColor);
 }
 div#chat-content header.content-header span.systemStat {
   width: 28px;
@@ -78,9 +78,9 @@ div#chat-content main.content-main span.chat-message[data-type="201"] div.messag
   align-items: center;
 }
 div#chat-content main.content-main span.chat-message[data-type="201"] div.message-info div.content-box div.user-info span.user-name {
-  color: #67C23A;
   font-size: 14px;
   line-height: 100%;
+  color: rgba(32, 165, 58);
 }
 div#chat-content main.content-main span.chat-message[data-type="201"] div.message-info div.content-box div.user-info span.user-time {
   font-size: 14px;
@@ -122,17 +122,21 @@ div#chat-content footer.content-footer {
   width: 100%;
   height: 60px;
   display: flex;
+  background-color: #ffffff;
   border-top: 8px solid #ffffff;
-  background-color: #dae8f1;
 }
 div#chat-content footer.content-footer div.chat-input {
   width: 80%;
-  border: none;
   background: none;
   box-shadow: none;
+  overflow: hidden;
+  border-radius: 0.25rem 0 0 0.25rem;
+  border: 1px solid rgba(32, 165, 58) !important;
+  border-right: none!important;
 }
 div#chat-content footer.content-footer div.chat-input div.el-input__wrapper {
   border-radius: 0%;
+  box-shadow: none!important;
   background-color: var(--el-color-primary-light-9);
 }
 div#chat-content footer.content-footer div.chat-input div.el-input__wrapper span.el-input__count-inner {
@@ -141,11 +145,9 @@ div#chat-content footer.content-footer div.chat-input div.el-input__wrapper span
 div#chat-content footer.content-footer button.chat-button {
   width: 20%;
   height: 100%;
-  border: none;
   color: #ffffff;
-  border-radius: 0%;
-  background-color: var(--el-button-hover-bg-color);
-  border: 1px solid var(--el-input-border-color, var(--el-border-color));
+  border-radius: 0 0.25rem 0.25rem 0;
+  border: 1px solid rgba(32, 165, 58) !important;
 }
 div#chat-content footer.content-footer button.chat-button:hover {
   border: 1px solid var(--el-button-hover-bg-color);
@@ -167,6 +169,7 @@ div.el-loading-spinner p.el-loading-text {
   margin: 15px 0;
   font-size: 15px;
   font-weight: 700;
+  color: rgba(32, 165, 58);
 }
 div.el-skeleton__item.el-skeleton__p.is-first {
   width: 100%;
