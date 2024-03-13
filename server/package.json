@@ -1,0 +1,16 @@
+{
+    "name": "websocket",
+    "version": "1.1.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "yichen9247",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^1.6.7",
+        "mysql": "^2.18.1",
+        "ws": "^8.15.1"
+    }
+}

@@ -1,0 +1,41 @@
+
+div#app {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+main#pagemain {
+    width: 95%;
+    margin: auto;
+    height: 820px;
+    overflow: hidden;
+    border: 0.5rem solid #ffffff;
+    box-shadow: var(--el-box-shadow-dark);
+    background-color: rgba(218,232,241,0.85);
+}
+
+main#pagemain {
+    display: flex;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+#footer-banner .footer-banner-links {
+    margin: 0!important;
+    padding-left: 0!important;
+    margin-right: 4px!important;
+}
+
+@media (max-width: 768px) {
+    main#pagemain {
+        margin: unset;
+        border-radius: unset;
+        width: calc(100% - 1rem);
+        height: calc(100% - 1rem);
+    }
+
+    div.el-skeleton {
+        display: none;
+    }
+}
